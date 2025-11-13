@@ -1,0 +1,21 @@
+name: Deploy via SSH
+on:
+  push:
+    branches:
+      - main  # or your branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Server
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: 22
+          script: |
+            cd /var/www/html
+            git pull origin main
+            echo "✅ Website updated!"
