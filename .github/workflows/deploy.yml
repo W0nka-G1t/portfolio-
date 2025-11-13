@@ -2,7 +2,7 @@ name: Deploy via SSH
 on:
   push:
     branches:
-      - main  # or your branch
+      - main   
 
 jobs:
   deploy:
@@ -16,6 +16,6 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: 22
           script: |
-            cd /var/www/html
+            cd /var/www/grwi-main
             git pull origin main
             echo "✅ Website updated!"
