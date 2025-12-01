@@ -130,7 +130,9 @@ footer span:after {
   color: #dff9fb;
   padding: 12px;
 }
-
+footer span a {
+  color:#dff9fb;
+}
 footer span:last-child:after {
   content: "";
 }
@@ -335,4 +337,5 @@ nav img {
     content-visibility: hidden;
   }
 }
+
   */
